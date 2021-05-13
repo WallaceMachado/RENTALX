@@ -20,9 +20,9 @@ class SpecificationRepository implements ISpecificationRepository {
     return SpecificationRepository.INSTANCE;
   }
   
-  list(): Specification[] {
-    const all = this.specifications
-    return all;
+  list(): void {
+     SpecificationRepository.getINSTANCE();
+    
   }
   create({ name, description }: ICreateSpecificationDTO): void {
     const specification = new Specification();

@@ -1,4 +1,5 @@
-import { Specification } from "../model/Specification";
+import { Specification } from "../../model/Specification";
+
 
 interface ICreateSpecificationDTO {
   name: string;
@@ -7,7 +8,7 @@ interface ICreateSpecificationDTO {
 
 interface ISpecificationRepository {
   findByName(name: string): Specification;
-  list(): Specification[];
+  list(): void;
   create({ name, description }: ICreateSpecificationDTO): void;
 }
 
