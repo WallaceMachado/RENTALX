@@ -7,7 +7,8 @@ class ImportCategoryUseCase {
  // constructor(private importCategoryController: ImportCategoryController){
 
 //}
-  excute({ file }: any){
+  excute( file : Express.Multer.File): void
+  {
 
     console.log(file);
  
