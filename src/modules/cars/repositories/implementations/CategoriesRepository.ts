@@ -1,7 +1,7 @@
 
 
-import { Category } from "../model/Category";
-import { ICategoriesRepository, ICreateCategoryDTO } from "./implementations/ICategoriesRepository";
+import { Category } from "../../model/Category";
+import { ICategoriesRepository, ICreateCategoryDTO } from "../ICategoriesRepository";
 
 
 
