@@ -8,8 +8,8 @@ class ImportCategoryController {
 
   handle(request: Request, response: Response): Response {
     const { file }= request;
-    console.log(file);
-
+    
+    this.importCategoryUseCase.excute(file);
     return response.send();
   }
 
