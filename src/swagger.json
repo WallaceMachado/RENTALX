@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RentalX Documention",
+    "description": "1.0.0",
+    "contact": {
+      "email": "wallacefm18@gmail.com"
+    }
+  }
+
+}
