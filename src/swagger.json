@@ -6,6 +6,45 @@
     "contact": {
       "email": "wallacefm18@gmail.com"
     }
+  },
+  "paths": {
+    "/Categories": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Create a ctegory",
+        "description": "Create a new Category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "category name sample",
+                  "description": "Category description sample"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category alread exists"
+          }
+        }
+      }
+    }
   }
-
 }
