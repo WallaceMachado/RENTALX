@@ -19,11 +19,12 @@ categoriesRoutes.post("/", (request, response) => {
 });
 
 categoriesRoutes.get("/", (request, response) => {
+  console.log("reaload resolvidos");
   return listCategoryController.hangle(request, response);
 });
 
 categoriesRoutes.post("/import", upload.single("file"), (request, respose) => {
- return importCategoryController.handle(request,respose);
+  return importCategoryController.handle(request, respose);
 });
 
 export { categoriesRoutes };
