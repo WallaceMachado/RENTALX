@@ -6,7 +6,7 @@
   "author": "wallacemachado <wallacefm18@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn --poll src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
   },
   "dependencies": {
