@@ -1,26 +1,13 @@
 import { Router } from "express";
-import { SpecificationRepository } from "../modules/cars/repositories/implementations/SpecificationRepository";
 
-import { createSpecificationController } from "../modules/cars/useCases/CreateSpecification";
+import { CreateSpecificationController } from "../modules/cars/useCases/CreateSpecification/CreateSpecificationController";
 
 
 const specificationsRoutes = Router();
 
-const specificationRepository = SpecificationRepository.getINSTANCE();
+const createSpecificationController = new CreateSpecificationController
 
 //path inicial da rota está no server
-specificationsRoutes.post("/", (request, response) => {
-
-  return createSpecificationController.handle(request, response);
-
-});
-
-specificationsRoutes.get("/", (request, response) => {
-
-  const all = specificationRepository.list();
-
-  return response.json(all);
-
-});
+specificationsRoutes.post("/", createSpecificationController.handle);
 
 export { specificationsRoutes }

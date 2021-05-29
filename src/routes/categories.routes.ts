@@ -2,8 +2,8 @@ import { Router } from 'express';
 import multer from 'multer';
 
 import { CreateCategoryController } from '../modules/cars/useCases/CreateCategory/CreateCategoryController';
-import { importCategoryController } from '../modules/cars/useCases/importCategory';
-import { listCategoryController } from '../modules/cars/useCases/listCategory';
+import { ImportCategoryController } from '../modules/cars/useCases/importCategory/importCategoryController';
+import { ListCategoryController } from '../modules/cars/useCases/listCategory/ListCategoryController';
 
 
 const categoriesRoutes = Router();
@@ -13,17 +13,13 @@ const upload = multer({
 });
 
 const createCategoryController = new CreateCategoryController();
-
+const importCategoryController = new ImportCategoryController();
+const listCategoryController = new ListCategoryController();
 //path inicial da rota está no server
 categoriesRoutes.post("/", createCategoryController.handle);
 
-categoriesRoutes.get("/", (request, response) => {
-  console.log("reaload resolvidos");
-  return listCategoryController.hangle(request, response);
-});
+categoriesRoutes.get("/", listCategoryController.hangle);
 
-categoriesRoutes.post("/import", upload.single("file"), (request, respose) => {
-  return importCategoryController.handle(request, respose);
-});
+categoriesRoutes.post("/import", upload.single("file"), importCategoryController.handle);
 
 export { categoriesRoutes };
