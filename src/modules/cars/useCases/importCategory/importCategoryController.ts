@@ -12,7 +12,7 @@ class ImportCategoryController {
     const importCategoryUseCase = container.resolve(ImportCategoryUseCase);
 
     await importCategoryUseCase.excute(file);
-    return response.send();
+    return response.status(201).send();
   }
 
 }
