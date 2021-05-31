@@ -1,6 +1,7 @@
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
+import { AppError } from "../../../../errors/AppError";
 
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
@@ -33,7 +34,7 @@ class AuthenticateUserUseCase {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new Error("Email or password incorrect!");
+      throw new AppError("Email or password incorrect!");
     }
 
 
@@ -41,7 +42,7 @@ class AuthenticateUserUseCase {
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error("Email or password incorrect!");
+      throw new AppError("Email or password incorrect!");
     }
 
     // Gerar jsonwebtoken , gerar md5 aleatótio, expiresIn - tempo para experar o token (1dia) 
@@ -51,9 +52,9 @@ class AuthenticateUserUseCase {
       expiresIn: "1d"
     });
 
-    const tokenReturn: IResponse ={
+    const tokenReturn: IResponse = {
       token,
-      user:{
+      user: {
         name: user.name,
         email: user.email,
       }
