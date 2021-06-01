@@ -32,6 +32,12 @@ export async function ensureAuthenticated(
       throw new AppError("User does not exists", 401);
     }
 
+    //para add user na tipagem do request é necessário sobescrever a tipagem do express
+    // para isso foi cirada a pasta @types e nela o arquivo que faz essa ação
+    request.user = {
+      id: user_id,
+    }
+
     next();
 
   } catch {
