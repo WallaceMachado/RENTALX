@@ -3,7 +3,7 @@ import { verify } from "jsonwebtoken";
 import { AppError } from "../errors/AppError";
 import { UsersRepository } from "../modules/accounts/repositories/implementations/UsersRepository";
 
-interface IPayload {
+interface IPayload {                                        
   sub: string;
 }
 
