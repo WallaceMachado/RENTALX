@@ -12,5 +12,6 @@ export default async (host = 'database'): Promise<Connection> => {
                   ? 'rentx_test'
                   : defaultOptions.database,
       })
+      
   );
 };
