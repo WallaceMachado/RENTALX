@@ -5,7 +5,7 @@ import { resolve } from "path";
 
 
 export default {
-  uplpad(folder: string) {
+  upload(folder: string) {
     return {
       storage: multer.diskStorage({
         destination: resolve(__dirname, "..", "..", folder),
