@@ -1,12 +1,15 @@
+import dayjs from "dayjs";
+
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
 import { ICreateRentalDTO } from "@modules/rentals/dtos/ICreateRentalDTO";
 import { RentalsRepositoryInMemory } from "@modules/rentals/repositories/in-memory/RentalsRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
 import { CreateRentalUseCase } from "./CreateRentalUseCase";
+import { DayjsDateProvider } from "@shared/container/provaiders/DateProvider/implementations/DayjsDateProvider";
 
 
 let rentalsRepository: RentalsRepositoryInMemory;
-//let dayjsDateProvider: DayjsDateProvider;
+let dayjsDateProvider: DayjsDateProvider;
 let createRentalUseCase: CreateRentalUseCase;
 let carsRepository: CarsRepositoryInMemory;
 
@@ -18,10 +21,10 @@ let sampleRentalLessThan24h: ICreateRentalDTO;
 describe('Create Rental', () => {
   beforeEach(() => {
       rentalsRepository = new RentalsRepositoryInMemory();
-    //  dayjsDateProvider = new DayjsDateProvider();
+      dayjsDateProvider = new DayjsDateProvider();
       createRentalUseCase = new CreateRentalUseCase(
           rentalsRepository,
-          // dayjsDateProvider,
+           dayjsDateProvider,
         //  carsRepository,
          
           
@@ -29,27 +32,27 @@ describe('Create Rental', () => {
   });
 
   beforeAll(() => {
-     // const new Date() = dayjs().add(1, 'day').toDate();
+      const dayAdd24Hours = dayjs().add(1, 'day').toDate();
       sampleRental_Car1_User1 = {
           car_id: '12345',
           user_id: '54321',
-          expected_return_date: new Date(),
+          expected_return_date: dayAdd24Hours,
       };
       sampleRental_Car2_User1 = {
           car_id: '23456',
           user_id: '54321',
-          expected_return_date: new Date(),
+          expected_return_date: dayAdd24Hours,
       };
       sampleRental_Car1_User2 = {
           car_id: '12345',
           user_id: '65432',
-          expected_return_date: new Date(),
+          expected_return_date: dayAdd24Hours,
       };
-    /*  sampleRentalLessThan24h = {
+      sampleRentalLessThan24h = {
           car_id: '12345',
           user_id: '54321',
           expected_return_date: dayjs().toDate(),
-      };*/
+      };
   });
 
   it('Should be able to create a new rental', async () => {
@@ -74,10 +77,10 @@ describe('Create Rental', () => {
           await createRentalUseCase.execute(sampleRental_Car1_User2);
       }).rejects.toBeInstanceOf(AppError);
   });
-/*
+
   it('Should not be able to create a new rental if rental duration is less than 24 hours', () => {
       expect(async () => {
           await createRentalUseCase.execute(sampleRentalLessThan24h);
       }).rejects.toBeInstanceOf(AppError);
-  });*/
+  });
 });

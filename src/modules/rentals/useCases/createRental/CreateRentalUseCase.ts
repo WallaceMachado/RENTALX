@@ -1,7 +1,10 @@
+import dayjs from "dayjs"
+
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 import { AppError } from "@shared/errors/AppError";
+import { IDateProvider } from "@shared/container/provaiders/DateProvider/IDateProvider";
 
 
 
@@ -18,7 +21,7 @@ class CreateRentalUseCase {
     private rentalsRepository: IRentalsRepository,
 
    // @inject('DayjsDateProvider')
-//private dateProvider: IDateProvider,
+    private dateProvider: IDateProvider,
 
    // @inject('CarsRepository')
   //  private carsRepository: ICarsRepository
@@ -43,7 +46,7 @@ async execute({
         throw new AppError('User can only rent one car at a time!');
     }
 
-    /*
+    
     const duration = this.dateProvider.compareInHours(
         this.dateProvider.dateNow(),
         expected_return_date
@@ -55,7 +58,7 @@ async execute({
         throw new AppError(
             'Rental duration needs to be longer than 24 hours!'
         );
-    } */
+    } 
 
     const rental = await this.rentalsRepository.create({
         car_id,
