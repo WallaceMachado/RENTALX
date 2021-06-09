@@ -1,4 +1,4 @@
-import { ICarImagesRepository } from "@modules/cars/repositories/IcarImagesRepository";
+import { ICarImagesRepository } from "@modules/cars/repositories/ICarImagesRepository";
 import { inject, injectable } from "tsyringe";
 
 
@@ -8,13 +8,13 @@ class UploadCarImagesUseCase {
   constructor(
     @inject('CarImagesRepository')
     private carImagesRepository: ICarImagesRepository
-) {}
+  ) { }
 
-async execute(car_id: string, images_name: string[]): Promise<void> {
+  async execute(car_id: string, images_name: string[]): Promise<void> {
     images_name.map(async (image) => {
-        await this.carImagesRepository.create(car_id, image);
+      await this.carImagesRepository.create(car_id, image);
     });
-}
+  }
 
 }
 

@@ -10,7 +10,7 @@ import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRep
 import { ISpecificationRepository } from "@modules/cars/repositories/ISpecificationRepository";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { CarsRepository } from "@modules/cars/infra/typeorm/repositories/CarRepository";
-import { ICarImagesRepository } from "@modules/cars/repositories/IcarImagesRepository";
+import { ICarImagesRepository } from "@modules/cars/repositories/ICarImagesRepository";
 import { CarImagesRepository } from "@modules/cars/infra/typeorm/repositories/CarImagesRepository";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
