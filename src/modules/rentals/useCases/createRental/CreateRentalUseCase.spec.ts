@@ -25,7 +25,7 @@ describe('Create Rental', () => {
       createRentalUseCase = new CreateRentalUseCase(
           rentalsRepository,
            dayjsDateProvider,
-        //  carsRepository,
+          carsRepository,
          
           
       );
