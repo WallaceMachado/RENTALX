@@ -3,19 +3,20 @@ import { Router } from "express";
 import { CreateRentalController } from "@modules/rentals/useCases/createRental/CreateRentalController";
 
 import { ensureAuthenticated } from "../middlewares/ensureAthenticated";
+import { DevolutionRentalController } from "@modules/rentals/useCases/DevolutionRental/DevolutionRentalController";
 
 
 const rentalsRoutes = Router();
 
 const createRentalController = new CreateRentalController();
-//const returnCarController = new returnCarController();
+const devolutionRentalController = new DevolutionRentalController();
 
 rentalsRoutes.post('/', ensureAuthenticated, createRentalController.handle);
-/*
+
 rentalsRoutes.post(
-  '/return/:id',
+  '/devolution/:id',
   ensureAuthenticated,
- // returnCarController.handle
+  devolutionRentalController.handle
 );
-*/
+
 export { rentalsRoutes }

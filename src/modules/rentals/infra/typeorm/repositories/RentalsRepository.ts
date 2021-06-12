@@ -38,7 +38,7 @@ class RentalsRepository implements IRentalsRepository {
 
   async findOngoingRentalByCar(car_id: string): Promise<Rental> {
     const ongoingRental = await this.repository.findOne({
-      where: { car_id, end_date: null },
+      where: { car_id, end_date: null }, // onde o car_id and end_date = null
     });
 
     return ongoingRental;
