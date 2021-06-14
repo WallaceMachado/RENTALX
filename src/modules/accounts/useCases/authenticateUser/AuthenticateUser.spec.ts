@@ -1,4 +1,5 @@
-import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
+
+import { UsersTokenRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersTokensRepositoryInMemory";
 import { IDateProvider } from "@shared/container/provaiders/DateProvider/IDateProvider";
 import { DayjsDateProvider } from "@shared/container/provaiders/DateProvider/implementations/DayjsDateProvider";
 import { AppError } from "@shared/errors/AppError";
@@ -11,13 +12,13 @@ import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 let authenticateUserUseCase: AuthenticateUserUseCase;
 let usersRepositoryInMemory: UsersRepositoryInMemory;
 let createUserUseCase: CreateUserUseCase;
-let usersTokensRepository: UsersTokensRepository;
+let usersTokensRepository: UsersTokenRepositoryInMemory;
 let dateProvider: IDateProvider;
 describe('Authenticate User', () => {
   //executado antes do teste
   beforeEach(() => {
     usersRepositoryInMemory = new UsersRepositoryInMemory();
-    usersTokensRepository = new UsersTokensRepository();
+    usersTokensRepository = new UsersTokenRepositoryInMemory ();
     dateProvider = new DayjsDateProvider();
     authenticateUserUseCase = new AuthenticateUserUseCase(
       usersRepositoryInMemory, usersTokensRepository, dateProvider

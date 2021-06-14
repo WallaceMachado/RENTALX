@@ -10,6 +10,7 @@ let connection: Connection;
 let adminToken: string;
 
 describe('Create Category Controller', () => {
+  jest.setTimeout(70000);
   beforeAll(async () => {
     connection = await createConnection();
     await connection.runMigrations();
@@ -29,7 +30,7 @@ describe('Create Category Controller', () => {
         password: 'admin',
       });
 
-    adminToken = responseToken.token;
+    adminToken = responseToken.refresh_token;
   });
 
   afterAll(async () => {
