@@ -52,21 +52,21 @@ describe('Send Forgo Mail', () => {
       sendForgotPasswordMailUseCase.execute('viwtop@li.cl')
     ).rejects.toEqual(new AppError('User does not exists!'));
   });
-/*
-  it('should be able to create an users token', async () => {
-    // const generateTokenMail = spyOn(usersTokensRepositoryInMemory, 'create');
-    // console.log(generateTokenMail);
-
-    await usersRepositoryInMemory.create({
-      driver_license: '520717',
-      email: 'jisitac@wacnuesi.fk',
-      name: 'Gertrude Griffith',
-      password: '1234'
+  /*
+    it('should be able to create an users token', async () => {
+      // const generateTokenMail = spyOn(usersTokensRepositoryInMemory, 'create');
+      // console.log(generateTokenMail);
+  
+      await usersRepositoryInMemory.create({
+        driver_license: '520717',
+        email: 'jisitac@wacnuesi.fk',
+        name: 'Gertrude Griffith',
+        password: '1234'
+      });
+  
+      await sendForgotPasswordMailUseCase.execute('jisitac@wacnuesi.fk');
+  
+      // expect(generateTokenMail).toBeCalled();
     });
-
-    await sendForgotPasswordMailUseCase.execute('jisitac@wacnuesi.fk');
-
-    // expect(generateTokenMail).toBeCalled();
-  });
-  */
+    */
 });

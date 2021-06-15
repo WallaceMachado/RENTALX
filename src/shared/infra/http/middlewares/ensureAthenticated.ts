@@ -28,17 +28,11 @@ export async function ensureAuthenticated(
   const [, token] = authHeader.split(" ");
 
   try {
-    const { sub: user_id } = verify(token, auth.secret_refresh_token) as IPayload;
+    const { sub: user_id } = verify(token, auth.secret_token) as IPayload;
 
 
 
-    const user = await userTokensRepository.findByUserIdAndRefreshToken(user_id, token);
-
-    if (!user) {
-      throw new AppError("User does not exist!", 401);
-    }
-
-    //para add user na tipagem do request é necessário sobescrever a tipagem do express
+        //para add user na tipagem do request é necessário sobescrever a tipagem do express
     // para isso foi cirada a pasta @types e nela o arquivo que faz essa ação
     request.user = {
       id: user_id,
