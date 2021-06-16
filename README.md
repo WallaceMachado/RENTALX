@@ -6,7 +6,7 @@ RF = Requisitos funcionais
 RNF = Requisitos não funcionais
 RN = Regra de negócio
 
-Cadastro de carro
+## Cadastro de carro
 RF
 [ x ] Deve ser possível cadastrar um novo carro.
 
@@ -15,7 +15,7 @@ RN
 [ x ] O carro deve ser cadastrado, por padrão, com disponibilidade.
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-Listagem de carros
+## Listagem de carros
 RF
 [ x ] Deve ser possível listar todos os carros disponíveis.
 [ x ] Deve ser possível listar todos os carros disponíveis pelo nome da categoria.
@@ -25,7 +25,7 @@ RF
 RN
 [ x ] O usuário não precisa estar logado no sistema.
 
-Cadastro de Especificação no carro
+## Cadastro de Especificação no carro
 RF
 [ x ] Deve ser possível cadastrar uma especificação para um carro.
 [ x ] Deve ser possível listar todas as especificações.
@@ -36,7 +36,7 @@ RN
 [ x ] Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-Cadastro de imagens do carro
+## Cadastro de imagens do carro
 RF
 [ x ] Deve ser possível cadastrar a imagem do carro.
 [ x ] Deve ser possível listar todos os carros.
@@ -48,7 +48,7 @@ RN
 [ x ] O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-Aluguel de carro
+## Aluguel de carro
 RF
 [ x ] Deve ser possível cadastrar um aluguel
 
@@ -59,7 +59,7 @@ RN
 [ x ] O usuário deve estar logado na aplicação.
 [ x ] Ao realizar um aluguel, o status do carro deverá ser alterado para indisponível.
 
-Devolução de carro
+## Devolução de carro
 RF
 [ x ] Deve ser possível realizar a devolução de um carro
 
@@ -72,14 +72,14 @@ RN
 [ x ] Caso haja multa, deverá ser somado ao total do aluguel.
 [ x ] O usuário deve estar logado na aplicação
 
-Listagem de Alugueis para usuário
+## Listagem de Alugueis para usuário
 RF
 [ x ] Deve ser possível realizar a busca de todos os alugueis para o usuário
 
 RN
 [ x ] O usuário deve estar logado na aplicação.
 
-Recuperar Senha
+## Recuperar Senha
 RF
 [ x ] Deve ser possível o usuário recuperar a senha informando o e-mail.
 [ x ] O usuário deve receber um e-mail com o passo a passo para a recuperação da senha.
