@@ -2,7 +2,7 @@
   "name": "RENTALX-Ignite",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/WallaceMachado/RENTALX-Ignite.git",
+  "repository": "https://github.com/WallaceMachado/RENTALX.git",
   "author": "wallacemachado <wallacefm18@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -16,6 +16,7 @@
     "D": "^1.0.0",
     "aws-sdk": "^2.929.0",
     "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.4.0",
     "csv-parse": "^4.15.4",
     "dayjs": "^1.10.5",
     "dotenv": "^10.0.0",
