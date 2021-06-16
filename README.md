@@ -2,57 +2,57 @@
 
 Tipos de requisitos
 
-RF = Requisitos funcionais
-RNF = Requisitos não funcionais
-RN = Regra de negócio
+**RF** = Requisitos funcionais
+**RNF** = Requisitos não funcionais
+**RN** = Regra de negócio
 
 ## Cadastro de carro
-RF
+**RF**
 [ x ] Deve ser possível cadastrar um novo carro.
 
-RN
+**RN**
 [ x ] Não deve ser possível cadastrar um carro com uma placa já existente.
 [ x ] O carro deve ser cadastrado, por padrão, com disponibilidade.
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
 ## Listagem de carros
-RF
+**RF**
 [ x ] Deve ser possível listar todos os carros disponíveis.
 [ x ] Deve ser possível listar todos os carros disponíveis pelo nome da categoria.
 [ x ] Deve ser possível listar todos os carros disponíveis pelo nome da marca.
 [ x ] Deve ser possível listar todos os carros disponíveis pelo nome do carro.
 
-RN
+**RN**
 [ x ] O usuário não precisa estar logado no sistema.
 
 ## Cadastro de Especificação no carro
-RF
+**RF**
 [ x ] Deve ser possível cadastrar uma especificação para um carro.
 [ x ] Deve ser possível listar todas as especificações.
 [ x ] Deve ser possível listar todos os carros.
 
-RN
+**RN**
 [ x ] Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
 [ x ] Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
 ## Cadastro de imagens do carro
-RF
+**RF**
 [ x ] Deve ser possível cadastrar a imagem do carro.
 [ x ] Deve ser possível listar todos os carros.
 
-RNF
+**RNF**
 [ x ] Utilizar o multer para o upload dos arquivos.
 
-RN
+**RN**
 [ x ] O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
 ## Aluguel de carro
-RF
+**RF**
 [ x ] Deve ser possível cadastrar um aluguel
 
-RN
+**RN**
 [ x ] O aluguel deve ter duração mínima de 24 horas.
 [ x ] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.
 [ x ] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.
@@ -60,10 +60,10 @@ RN
 [ x ] Ao realizar um aluguel, o status do carro deverá ser alterado para indisponível.
 
 ## Devolução de carro
-RF
+**RF**
 [ x ] Deve ser possível realizar a devolução de um carro
 
-RN
+**RN**
 [ x ] Se o carro for devolvido com menos de 24 horas, deverá ser cobrado diária completa.
 [ x ] Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
 [ x ] Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
@@ -73,18 +73,18 @@ RN
 [ x ] O usuário deve estar logado na aplicação
 
 ## Listagem de Alugueis para usuário
-RF
+**RF**
 [ x ] Deve ser possível realizar a busca de todos os alugueis para o usuário
 
-RN
+**RN**
 [ x ] O usuário deve estar logado na aplicação.
 
 ## Recuperar Senha
-RF
+**RF**
 [ x ] Deve ser possível o usuário recuperar a senha informando o e-mail.
 [ x ] O usuário deve receber um e-mail com o passo a passo para a recuperação da senha.
 [ x ] O usuário deve conseguir inserir uma nova senha.
 
-RN
+**RN**
 [ x ] O usuário precisa informar uma nova senha.
 [ x ] O link enviado para a recuperação deve expirar em 3 horas.
