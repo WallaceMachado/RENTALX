@@ -1,4 +1,4 @@
-# RENTALX-Ignite
+# RENTALX
 
 # Cadastro de carro
 
