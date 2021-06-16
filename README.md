@@ -3,19 +3,26 @@
 Tipos de requisitos
 
 **RF** = Requisitos funcionais
+
 **RNF** = Requisitos não funcionais
+
 **RN** = Regra de negócio
+
 
 ## Cadastro de carro
 **RF**
+
 [ x ] Deve ser possível cadastrar um novo carro.
 
+
 **RN**
+
 [ x ] Não deve ser possível cadastrar um carro com uma placa já existente.
 
 [ x ] O carro deve ser cadastrado, por padrão, com disponibilidade.
 
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
+
 
 ## Listagem de carros
 **RF**
@@ -27,6 +34,7 @@ Tipos de requisitos
 [ x ] Deve ser possível listar todos os carros disponíveis pelo nome da marca.
 
 [ x ] Deve ser possível listar todos os carros disponíveis pelo nome do carro.
+
 
 **RN**
 
@@ -41,6 +49,7 @@ Tipos de requisitos
 
 [ x ] Deve ser possível listar todos os carros.
 
+
 **RN**
 
 [ x ] Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
@@ -50,15 +59,18 @@ Tipos de requisitos
 [ x ] O usuário responsável pelo cadastro deve ser um usuário administrador.
 
 ## Cadastro de imagens do carro
+
 **RF**
 
 [ x ] Deve ser possível cadastrar a imagem do carro.
 
 [ x ] Deve ser possível listar todos os carros.
 
+
 **RNF**
 
 [ x ] Utilizar o multer para o upload dos arquivos.
+
 
 **RN**
 
@@ -70,6 +82,7 @@ Tipos de requisitos
 **RF**
 
 [ x ] Deve ser possível cadastrar um aluguel
+
 
 **RN**
 
@@ -83,10 +96,12 @@ Tipos de requisitos
 
 [ x ] Ao realizar um aluguel, o status do carro deverá ser alterado para indisponível.
 
+
 ## Devolução de carro
 **RF**
 
 [ x ] Deve ser possível realizar a devolução de um carro
+
 
 **RN**
 
@@ -104,6 +119,7 @@ Tipos de requisitos
 
 [ x ] O usuário deve estar logado na aplicação
 
+
 ## Listagem de Alugueis para usuário
 **RF**
 
@@ -114,6 +130,7 @@ Tipos de requisitos
 
 [ x ] O usuário deve estar logado na aplicação.
 
+
 ## Recuperar Senha
 **RF**
 
@@ -123,7 +140,9 @@ Tipos de requisitos
 
 [ x ] O usuário deve conseguir inserir uma nova senha.
 
+
 **RN**
+
 [ x ] O usuário precisa informar uma nova senha.
 
 [ x ] O link enviado para a recuperação deve expirar em 3 horas.
