@@ -13,9 +13,13 @@ import { AppError } from "@shared/errors/AppError";
 import swaggerFile from '../../../swagger.json';
 import { router } from "./routes";
 import upload from "@config/upload";
+import rateLimiter from "./middlewares/rateLimiter";
+
 
 createConnection();
 const app = express();
+
+app.use(rateLimiter);
 
 app.use(express.json());
 
