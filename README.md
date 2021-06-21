@@ -10,6 +10,8 @@ Acesse a documentação da API em: https://rentx.wallacemachado.com/api-docs/#/
 
 * docker-compose up -d
 
+* yarn typeorm migration:run
+
 * yarn dev
 
 # RENTALX
