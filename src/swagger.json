@@ -8,6 +8,95 @@
     }
   },
   "paths": {
+    "/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create a user",
+        "description": "Create a new user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "driver_license": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "test name",
+                  "email": "test@test.com",
+                  "password": "1234",
+                  "driver_license": "000111333"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "User alread exists"
+          }
+        }
+      }
+    },
+    "/sessions": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Authenticate user",
+        "description": "Authenticate user and generate an access token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "admin@rentx.com",
+                  "password": "admin"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Authenticated"
+          },
+          "400": {
+            "description": "Email or password incorrect"
+          }
+        }
+      }
+    },
     "/Categories": {
       "post": {
         "tags": [
@@ -142,44 +231,6 @@
           },
           "500": {
             "description": "Specification alredy exists"
-          }
-        }
-      }
-    },
-    "/sessions": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Authenticate user",
-        "description": "Authenticate user and generate an access token",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "email": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "email": "admin@rentx.com",
-                  "password": "admin"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Authenticated"
-          },
-          "400": {
-            "description": "Email or password incorrect"
           }
         }
       }
