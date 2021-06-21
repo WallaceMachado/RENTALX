@@ -1,3 +1,17 @@
+# API-DOCS
+
+Acesse a documentação da API em: https://rentx.wallacemachado.com/api-docs/#/
+
+# STARTING THE PROJECT
+
+* git clone https://github.com/WallaceMachado/RENTALX.git
+
+* yarn 
+
+* docker-compose up -d
+
+* yarn dev
+
 # RENTALX
 
 Tipos de requisitos
